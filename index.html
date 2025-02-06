@@ -12,12 +12,13 @@
 
         body {
             margin: 0;
-            background-image: url('./main2.jpg');
+            background-image: url('./main1.jpg');
             background-size: cover;
             background-position: center;
             height: 100vh;
             overflow: hidden;
         }
+
 
         .login-container {
             display: flex;
@@ -25,37 +26,50 @@
             align-items: center;
             height: 100vh;
             flex-direction: column;
-            background-color: rgba(255, 255, 255, 0.837);
-            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.847);
+            margin-top: 0px;
         }
 
-        .login-container p {
-            margin-bottom: 50px;
-            font-size: 25px;
+        .login-container p.main-title {
+            margin-top: 80px;
+            margin-bottom: 0px;
+            font-size: 40px;
             color: #00267f;
             font-weight: 700;
+        }
+
+        .login-container p.subtitle {
+            margin-bottom: 50px;
+            margin-top: 8px;
+            font-size: 16px;
+            color: #00267f;
+            font-weight: 400;
+            opacity: 0.8;
         }
 
         .login-container input {
             padding: 10px;
             margin: 10px;
-            width: 340px;
-            height: 40px;
-            border-radius: 5px;
+            width: 350px;
+            height: 50px;
+            border-radius: 50px;
             border: none;
             font-size: 15px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+            border: #ececec solid 1px;
+
         }
 
         .login-container button {
-            margin: 40px 20px 20px 20px;
+            margin: 30px 20px 20px 20px;
             padding: 10px;
             background-color: #00267f;
             color: white;
             width: 300px;
             height: 50px;
             border: none;
-            border-radius: 5px;
+            border-radius: 50px;
             cursor: pointer;
             font-size: 15px;
             transition: background-color 0.3s ease, transform 0.2s ease;
@@ -66,10 +80,37 @@
             transform: scale(1.05);
         }
 
-        .find_id {
-            color: #8f8f8f;
+        .logo_1 {
+            width: 150px;
+            height: auto;
+            margin-top: 80px;
+            margin-right: 40px; 
+        }
+
+        .logo_2 {
+            width: 70px;
+            height: auto;
+            margin-top: 80px;
+            margin-right: 40px;
+        }
+
+        .logo_3 {
+            width: 120px;
+            height: auto;
+            margin-top: 20px;
+            margin-right: 40px; /* 마지막 로고는 더 넉넉하게 */
+        }
+
+        /* 기존 스타일 유지 */
+        .copyright {
+            margin-top: 20px;
+            color: #7c7c7c;
             font-size: 12px;
-            margin-top: 18px;
+        }
+
+        .find_id {
+            color: #7c7c7c;
+            font-size: 12px;
         }
 
         /* 성공 화면 스타일 */
@@ -87,7 +128,7 @@
             justify-content: center;
             align-items: center;
             font-size: 28px;
-            font-weight: bold;
+            font-weight: 600;
             color: #00267f;
         }
 
@@ -97,21 +138,21 @@
             color: green;
         }
 
-        /* 로딩 중 동그라미 3개 */
+       /* 로딩 중 동그라미 3개 */
         .loading-dots {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 40px;
         }
 
         .dot {
-            width: 15px;
-            height: 15px;
+            width: 12px;
+            height: 12px;
             margin: 0 5px;
             background-color: #00267f;
             border-radius: 50%;
-            animation: bounce 1.5s infinite ease-in-out;
+            animation: bounce 1.5s infinite ease-in-out, color-change 1.5s infinite ease-in-out;
         }
 
         .dot:nth-child(1) {
@@ -135,15 +176,39 @@
             }
         }
 
+        @keyframes color-change {
+            0% {
+                background-color: #00267f;
+            }
+            50% {
+                background-color: #c2d94f; /* 부드러운 분홍색 */
+            }
+            100% {
+                background-color: #00267f;
+            }
+        }
+
+
     </style>
 </head>
 <body>
     <div class="login-container" id="login-page">
-        <p>Login to NotiSKKU</p>
-        <input type="text" id="username" placeholder="Enter username" autocomplete="off">
-        <input type="password" id="password" placeholder="Enter password" autocomplete="off">
+        <p class="main-title">NotiSKKU</p>
+        <p class="subtitle">Login to continue NotiSKKU</p>
+        <input type="text" id="username" placeholder="  Username" autocomplete="off">
+        <input type="password" id="password" placeholder="  Password" autocomplete="off">
         <button onclick="login()">Login</button>
-        <a href="#" class="find_id">Did you forget your ID/Password?</a>
+            <a href="#" class="find_id">Frogot ID/Password?</a>
+
+        <div class="logo_container">
+            <img src="./logo.png" class="logo_1">
+            <img src="./thu_logo.png" class="logo_2">
+            <!-- <img src="./img/dasu.png" class="logo_3"> -->
+        </div>
+
+        <p class="copyright"> Copyright ⓒ 2025 Team Formula 1. All rights reserved.</p>
+
+
     </div>
 
     <div class="success-screen" id="success-screen">
